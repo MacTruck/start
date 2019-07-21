@@ -1,3 +1,17 @@
+:root {
+	--green: #bbffe3;
+	--darkGreen: #009688;
+	--orange: #ffe9c5;
+
+	--purple: #9639c4;
+	--purple2: #5d0074;
+	--purple3: #ffbdf3;
+	--gold1: #f9cd73;
+	--gold2: #fbb655;
+	--gold3: #f5a500;
+	--pink: #ffbdf3; 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,27 +23,16 @@
     box-sizing: border-box;
 	font-family: 'Raleway', sans-serif;
 }
-html {
-	width: 400px;
-	margin-left: auto;
-	margin-right: auto;
-	background: #e0e0e0;
-	background: #b1b1b1; 
-}
 body {
 	color: #333;
 	text-align: center;
 	margin: 0;
 	padding: 0;
 	position: relative;
-	background: #eee;
-	background-image: linear-gradient(45deg, #5d0074, #9639c4);
-	background: #bbffe3;	/* green */
-	margin-top: 50px;
+	background: var(--green);
 }
 header {
 	padding: 20px 0;
-	/*background: rgba(0,0,0,.35);*/
 	position: relative;
 }
 header img#icon {
@@ -43,31 +46,22 @@ a#loginButton {
 	right: 10px;
 	top: 18px;
 	text-decoration: none;
-	/*background: #ffc966;*/
-	color: #ffc966;
-	color: #333; /* gray */
-	color: #009688; /* dark green */
+	color: var(--darkGreen);
 	font-weight: 500;
 	letter-spacing: .0125em;
 	border-radius: 3px;
 	padding: 5px 10px; 
 }
 h1 {
-	/*color: #bc55bc;*/
-	/*color: #f56767;*/
-	/*color: #efbaff;*/
-	color: #cd67ff;
-	color: #333; /* gray */
+	color: #333;
 	font-size: 1.25rem;
 	font-weight: 700;
 	letter-spacing: .1em;
 	letter-spacing: .125em;
 	text-transform: uppercase;
-	/*text-shadow: 2px 2px 2px rgba(0,0,0,.25)*/
 }
 h3 {
-	color: #ffbdf3;
-	color: #333; /* gray */
+	color: #333;
 	letter-spacing: .035em;
 	margin-bottom: 10px;
 }
@@ -91,20 +85,17 @@ button {
 	border-radius: 3px;
 	padding: 1em 3em;
 	color: white;
-	/*background: #27c042;	 /* green */
-	background: #f5a500;
-	background-image: linear-gradient(360deg, #fbb655, #f5a500, #fbb655, #f9cd73);
-	background: #333; /* gray */
+	background: #333;
 	box-shadow: 3px 3px 5px rgba(0,0,0,.125);
 	transition: .125s ease all;
 }
 button#pause-play, button#stop-save {
-	background: #009688; /* dark green */
+	background: var(--darkGreen);
 	letter-spacing: .05em;
 	display: none;
 }
 button#pause-play:hover, button#stop-save:hover {
-	/*box-shadow: 0 0 20px rgba(249, 205, 115, .75);*/
+	background: #333;
 }
 button#startButton {
 	font-size: 1.5rem;
@@ -112,23 +103,18 @@ button#startButton {
 	letter-spacing: .05em;
 	display: block;
 	margin: 5rem auto;
-	/*box-shadow: 0px 0px 40px rgba(0,0,0,.5);*/
 }
 button:hover, button#startButton:hover {
-	/*box-shadow: 0 0 40px rgba(249, 205, 115, .75);*/
-	background: #009688;
-	/*color: #333;*/
+	background: var(--darkGreen);
 }
 div#timer {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 4rem;
 	letter-spacing: .025em;
 	display: none;
-	/*padding: 1em 3em;*/
 	margin: 3rem auto 4rem auto;
 	color: white;
-	color: #009688; /* green */
-	/*color: #333;*/
+	color: var(--darkGreen);
 	text-align: center;
 }
 #recordForm {
@@ -140,11 +126,7 @@ div#timer {
 	font-size: 1.25rem;
 }
 input[type='text'] {
-	/*background: #ffb8a7;*/
-	/*background: #71d8d6;*/
-	background: #ffbdf3;
-	background: #ffe9c5; /* light orange */
-	color: #792190;
+	background: var(--orange);
 	color: #333;
 	font-family: 'Soure Sans Pro', sans-serif;
 	margin: 5px 0;
@@ -158,27 +140,20 @@ input[type='text'] {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 	font-style: italic;
-/*	color: #999;
-	color: #ce5309;
-	color: #792190;
-	color: #009688; /* dark green */*/
+}
+#addTaskButton {
+	font-size: 3rem;
+	color: var(--darkGreen);
 }
 ul {
 	list-style-type: none;
 }
 .recordList li {
-	/*color: #777;*/
-	/*color: #df6013;*/
-	color: #792190;
-	color: #333; /* gray */
+	color: #333;
 	margin: 5px 10px;
 	padding: 10px 20px;
 	line-height: 1.5em;
-	/*background: #ddd;*/
-	/*background: #ffd3c2;*/
-	background: #ffbdf3; /* purple */
-	background: #e4fff3; /* light green */
-	background: #ffe9c5; /* light orange */
+	background: var(--orange);
 	box-shadow: inset 3px 3px 5px rgba(0,0,0,.125);
 	border-radius: 3px;
 	text-align: left;
@@ -194,9 +169,18 @@ ul {
 }
 footer {
 	margin-top: 50px;
-	/*padding: 20px;*/
 	background: rgba(0,0,0,.125);
 	color: #ccc;
 	height: 10px;
-	/*border-bottom: 3px solid #34a595;*/
+}
+
+@media screen and (min-width: 900px) {
+	html {
+		width: 400px;
+		margin-top: 50px;
+		margin-left: auto;
+		margin-right: auto;
+		background: #e0e0e0;
+		background: #b1b1b1; 
+	}
 }

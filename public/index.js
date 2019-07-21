@@ -30,7 +30,7 @@ startButton.addEventListener('click', () => {
 	startButton.style.display = 'none';
 	recordList.style.display = 'none';
 	timer.style.display = 'block';
-	pausePlay.style.display = 'initial';
+	// pausePlay.style.display = 'initial';
 	stopSave.style.display = 'initial';
 	recordForm.style.display = 'block';
 	let currentTime, millisecDifference, secondsDiffence;

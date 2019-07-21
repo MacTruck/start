@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-
 	<title>Dead Simple Time Tracker</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./public/style.css">
 </head>
@@ -19,8 +19,9 @@
 	<button id="pause-play">Pause</button>
 	<button id="stop-save">Stop & Save</button>
 	<form id='recordForm'>
-		<input type="text" name="tasks" placeholder="Tasks">
 		<input type="text" name="project" placeholder="Project">
+		<input type="text" name="tasks" placeholder="Tasks">
+		<div id="addTaskButton">+</div>
 	</form>
 	<ul class="recordList">
 		<h3>Recent Projects</h3>
