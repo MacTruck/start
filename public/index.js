@@ -5,6 +5,7 @@ const stopSave = document.querySelector('#stop-save');
 const recordForm = document.querySelector('#recordForm');
 const recordList = document.querySelector('.recordList');
 const popup = document.querySelector('#popup');
+
 let popupClicked = 0;
 
 popup.addEventListener('click', () => {
@@ -15,10 +16,10 @@ popup.addEventListener('click', () => {
 pausePlay.addEventListener('click', () => {
 	if (pausePlay.innerHTML === 'Pause') {
 		pausePlay.innerHTML = 'Play';
-		pausePlay.style.background = '#166b63';
+		pausePlay.style.background = 'var(--darkJungle';
 	} else {
 		pausePlay.innerHTML = 'Pause';
-		pausePlay.style.background = '#009688';
+		pausePlay.style.background = '#333';
 	}
 });
 
@@ -30,7 +31,7 @@ startButton.addEventListener('click', () => {
 	startButton.style.display = 'none';
 	recordList.style.display = 'none';
 	timer.style.display = 'block';
-	// pausePlay.style.display = 'initial';
+	pausePlay.style.display = 'initial';
 	stopSave.style.display = 'initial';
 	recordForm.style.display = 'block';
 	let currentTime, millisecDifference, secondsDiffence;

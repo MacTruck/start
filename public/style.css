@@ -1,7 +1,17 @@
 :root {
-	--green: #bbffe3;
+	--green: #ccffea;
 	--darkGreen: #009688;
 	--orange: #ffe9c5;
+	--blue: #adf3ff;
+	--darkBlue: #1d9cb1;
+	--darkerBlue: #0e7a88;
+	--yellow: #ffe391;
+	--greengreen: #4caf50;
+		--offwhite: #fdfdee;
+		--darkOffwhite: #dfdfd0;
+		--brightOrange: #ffb01f;
+		--jungleGreen: #86CA65;
+		--darkJungle: #0f8c01;
 
 	--purple: #9639c4;
 	--purple2: #5d0074;
@@ -11,7 +21,6 @@
 	--gold3: #f5a500;
 	--pink: #ffbdf3; 
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -23,13 +32,21 @@
     box-sizing: border-box;
 	font-family: 'Raleway', sans-serif;
 }
+html, body {
+	overflow: hidden;
+}
+html { 
+	background: black;
+	background-size: cover;
+}
 body {
 	color: #333;
 	text-align: center;
 	margin: 0;
 	padding: 0;
 	position: relative;
-	background: var(--green);
+	background: var(--offwhite);
+	min-height: 668px;
 }
 header {
 	padding: 20px 0;
@@ -46,7 +63,7 @@ a#loginButton {
 	right: 10px;
 	top: 18px;
 	text-decoration: none;
-	color: var(--darkGreen);
+	color: var(--darkBlue);
 	font-weight: 500;
 	letter-spacing: .0125em;
 	border-radius: 3px;
@@ -90,7 +107,7 @@ button {
 	transition: .125s ease all;
 }
 button#pause-play, button#stop-save {
-	background: var(--darkGreen);
+	background: #333;
 	letter-spacing: .05em;
 	display: none;
 }
@@ -105,7 +122,7 @@ button#startButton {
 	margin: 5rem auto;
 }
 button:hover, button#startButton:hover {
-	background: var(--darkGreen);
+	background: var(--brightOrange);
 }
 div#timer {
 	font-family: 'Source Sans Pro', sans-serif;
@@ -113,8 +130,8 @@ div#timer {
 	letter-spacing: .025em;
 	display: none;
 	margin: 3rem auto 4rem auto;
-	color: white;
-	color: var(--darkGreen);
+	color: #333;
+	text-shadow: 2px 2px 5px rgba(0,0,0,.25);
 	text-align: center;
 }
 #recordForm {
@@ -126,7 +143,7 @@ div#timer {
 	font-size: 1.25rem;
 }
 input[type='text'] {
-	background: var(--orange);
+	background: var(--jungleGreen);
 	color: #333;
 	font-family: 'Soure Sans Pro', sans-serif;
 	margin: 5px 0;
@@ -139,11 +156,12 @@ input[type='text'] {
 ::placeholder {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
+	color: var(--darkJungle);
 	font-style: italic;
 }
 #addTaskButton {
 	font-size: 3rem;
-	color: var(--darkGreen);
+	color: var(--darkJungle);
 }
 ul {
 	list-style-type: none;
@@ -153,7 +171,7 @@ ul {
 	margin: 5px 10px;
 	padding: 10px 20px;
 	line-height: 1.5em;
-	background: var(--orange);
+	background: var(--jungleGreen);
 	box-shadow: inset 3px 3px 5px rgba(0,0,0,.125);
 	border-radius: 3px;
 	text-align: left;
@@ -168,10 +186,13 @@ ul {
 	margin-left: .5em;
 }
 footer {
-	margin-top: 50px;
-	background: rgba(0,0,0,.125);
+	margin-top: 100px;
+	background: rgba(0,0,0,.25);
 	color: #ccc;
 	height: 10px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
 }
 
 @media screen and (min-width: 900px) {
