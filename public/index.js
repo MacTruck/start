@@ -13,7 +13,13 @@ popup.addEventListener('click', () => {
 });
 
 pausePlay.addEventListener('click', () => {
-	pausePlay.innerHTML = pausePlay.innerHTML === 'Pause' ? 'Play' : 'Pause';
+	if (pausePlay.innerHTML === 'Pause') {
+		pausePlay.innerHTML = 'Play';
+		pausePlay.style.background = '#166b63';
+	} else {
+		pausePlay.innerHTML = 'Pause';
+		pausePlay.style.background = '#009688';
+	}
 });
 
 startButton.addEventListener('click', () => {
