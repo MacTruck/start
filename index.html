@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<title>Dead Simple Time Tracker</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./public/style.css">
+</head>
+<body>
+	<div id="popup">Don't forget to add new tasks</div>
+	<header><h1>Dead Simple</h1><a id="loginButton" href="#">Log In</a></header>
+	<button id="startButton">Start</button>
+	<div id="timer">00:00:00</div>
+	<button id="pause-play">Pause</button>
+	<button id="stop-save">Stop & Save</button>
+	<form id='recordForm'>
+		<input type="text" name="tasks" placeholder="Tasks">
+		<input type="text" name="project" placeholder="Project">
+	</form>
+	<ul class="recordList">
+		<li>
+			<span class="recordTitle">Diabetes is a killer</span><span class="recordTasks">Alternated hot & cool...</span>
+			<p>June 3, 2019</p>
+		</li>
+		<li>
+			<span class="recordTitle">Bonifide</span><span class="recordTasks">Added altruism points...</span>
+			<p>Sept 29, 2018</p>
+		</li>
+		<li>
+			<span class="recordTitle">Untitled Project</span><span class="recordTasks">Questionable outcomes...</span>
+			<p>March 6, 2018</p>
+		</li>
+	</ul>
+	<footer></footer>
+
+	<script type="text/javascript" src="public/index.js"></script>
+</body>
+</html>
