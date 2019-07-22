@@ -33,10 +33,8 @@
     box-sizing: border-box;
 	font-family: 'Raleway', sans-serif;
 }
-html, body {
-	overflow: hidden;
-}
 html { 
+	height: 100%;
 	background: black;
 	background-size: cover;
 }
@@ -47,7 +45,7 @@ body {
 	padding: 0;
 	position: relative;
 	background: var(--offwhite);
-	min-height: 668px;
+	min-height: 100%;
 }
 header {
 	padding: 20px 0;
@@ -143,7 +141,10 @@ div#timer {
 	margin-right: auto;
 	font-size: 1.25rem;
 }
-input[type='text'] {
+textarea {
+	overflow: hidden;
+}
+textarea, input[type="text"] {
 	background: var(--jungleGreen);
 	color: var(--darkJungle);
 	font-family: 'Soure Sans Pro', sans-serif;
@@ -153,9 +154,28 @@ input[type='text'] {
 	border-radius: 3px;
 	box-shadow: inset 3px 3px 5px rgba(0,0,0,.125);
 	display: block;
+	position: relative;
 }
-input[type='text']:focus {
+textarea:focus, input[type="text"]:focus {
 	color: #333;
+}
+textarea::after {
+	display: inline-block;
+	/*position: absolute;*/
+	content: '-';
+	font-size: 5rem;
+	color: red;
+	height: 1em;
+	top: 1.3em;
+	left: 0.6em;
+	margin-top: -1em;
+	width: 0.5em;
+}
+.removeTaskItem {
+	color: var(--offwhite);
+	text-shadow: 3px 3px 5px rgba(0,0,0,.125);
+	position: absolute;
+	right: 5px;
 }
 ::placeholder {
 	font-family: 'Raleway', sans-serif;
@@ -169,6 +189,7 @@ input[type='text']:focus {
 	line-height: .5em;
 	margin-left: auto;
 	margin-right: auto;
+	padding-bottom: 50px;
 	color: var(--darkJungle);
 }
 ul {
@@ -193,13 +214,16 @@ ul {
 	font-style: italic;
 	margin-left: .5em;
 }
+.recordList li:last-child {
+	margin-bottom: 50px;
+}
 footer {
+	position: absolute;
 	margin-top: 100px;
 	background: rgba(0,0,0,.25);
 	color: #ccc;
 	height: 10px;
 	width: 100%;
-	position: absolute;
 	bottom: 0;
 }
 
