@@ -10,7 +10,8 @@
 		--offwhite: #fdfdee;
 		--darkOffwhite: #dfdfd0;
 		--brightOrange: #ffb01f;
-		--jungleGreen: #86CA65;
+		--jungleGreen: #aee16c;
+		--mediumJungle: #86CA65;
 		--darkJungle: #0f8c01;
 
 	--purple: #9639c4;
@@ -63,7 +64,7 @@ a#loginButton {
 	right: 10px;
 	top: 18px;
 	text-decoration: none;
-	color: var(--darkBlue);
+	color: var(--mediumJungle);
 	font-weight: 500;
 	letter-spacing: .0125em;
 	border-radius: 3px;
@@ -144,7 +145,7 @@ div#timer {
 }
 input[type='text'] {
 	background: var(--jungleGreen);
-	color: #333;
+	color: var(--darkJungle);
 	font-family: 'Soure Sans Pro', sans-serif;
 	margin: 5px 0;
 	padding: 10px 20px;
@@ -153,6 +154,9 @@ input[type='text'] {
 	box-shadow: inset 3px 3px 5px rgba(0,0,0,.125);
 	display: block;
 }
+input[type='text']:focus {
+	color: #333;
+}
 ::placeholder {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
@@ -160,14 +164,18 @@ input[type='text'] {
 	font-style: italic;
 }
 #addTaskButton {
+	display: none;
 	font-size: 3rem;
+	line-height: .5em;
+	margin-left: auto;
+	margin-right: auto;
 	color: var(--darkJungle);
 }
 ul {
 	list-style-type: none;
 }
 .recordList li {
-	color: #333;
+	color: var(--darkJungle);
 	margin: 5px 10px;
 	padding: 10px 20px;
 	line-height: 1.5em;

@@ -4,6 +4,8 @@ const pausePlay = document.querySelector('#pause-play');
 const stopSave = document.querySelector('#stop-save');
 const recordForm = document.querySelector('#recordForm');
 const recordList = document.querySelector('.recordList');
+const addTaskButton = document.querySelector('#addTaskButton');
+
 const popup = document.querySelector('#popup');
 
 let popupClicked = 0;
@@ -23,6 +25,14 @@ pausePlay.addEventListener('click', () => {
 	}
 });
 
+addTaskButton.addEventListener('click', () => {
+	let taskItem = document.createElement('input');
+	taskItem.setAttribute('type', 'text');
+	taskItem.setAttribute('name', 'tasks');
+	taskItem.setAttribute('placeholder', 'Tasks');
+	recordForm.appendChild(taskItem);
+});
+
 startButton.addEventListener('click', () => {
 	let timestamp = new Date();
 	let totalSeconds = 1;
@@ -34,6 +44,7 @@ startButton.addEventListener('click', () => {
 	pausePlay.style.display = 'initial';
 	stopSave.style.display = 'initial';
 	recordForm.style.display = 'block';
+	addTaskButton.style.display = 'block';
 	let currentTime, millisecDifference, secondsDiffence;
 
 	setInterval(() => {
