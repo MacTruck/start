@@ -111,7 +111,7 @@ button#pause-play, button#stop-save {
 	display: none;
 }
 button#pause-play:hover, button#stop-save:hover {
-	background: #333;
+	background: var(--brightOrange);
 }
 button#startButton {
 	font-size: 1.5rem;

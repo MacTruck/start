@@ -1,6 +1,6 @@
 const startButton = document.querySelector('#startButton');
 const timer = document.querySelector('#timer');
-const pausePlay = document.querySelector('#pause-play');
+// const pausePlay = document.querySelector('#pause-play');
 const stopSave = document.querySelector('#stop-save');
 const recordForm = document.querySelector('#recordForm');
 const recordList = document.querySelector('.recordList');
@@ -20,34 +20,27 @@ popup.addEventListener('click', () => {
 	popup.style.display = 'none';
 });
 
-pausePlay.addEventListener('click', () => {
-	if (pausePlay.innerHTML === 'Pause') {
-		pausePlay.innerHTML = 'Play';
-		pausePlay.style.background = 'var(--darkJungle';
-	} else {
-		pausePlay.innerHTML = 'Pause';
-		pausePlay.style.background = '#333';
-	}
-});
+// pausePlay.addEventListener('click', () => {
+// 	if (pausePlay.innerHTML === 'Pause') {
+// 		pausePlay.innerHTML = 'Play';
+// 		pausePlay.style.background = 'var(--darkJungle';
+// 	} else {
+// 		pausePlay.innerHTML = 'Pause';
+// 		pausePlay.style.background = '#333';
+// 	}
+// });
+
 
 addTaskButton.addEventListener('click', () => {
 	let taskItem = document.createElement('textarea');
 	taskItem.classList.add('newTask');
 	taskItem.setAttribute('rows', '1');
-	// taskItem.setAttribute('type', 'text');
-	// taskItem.setAttribute('name', 'tasks');
 	taskItem.setAttribute('placeholder', 'Tasks');
-	// let removeTaskItem = document.createElement('span');
-	// removeTaskItem.setAttribute('class', 'removeTaskItem');
-	// removeTaskItem.innerHTML = '-';
-	// taskItem.appendChild(removeTaskItem);
 	taskItem.addEventListener('input', () => {
 		taskItem.style.height = `${taskItem.scrollHeight}px`;
 	})
 	recordForm.appendChild(taskItem);
 });
-
-
 
 startButton.addEventListener('click', () => {
 	let timestamp = new Date();
@@ -57,13 +50,22 @@ startButton.addEventListener('click', () => {
 	startButton.style.display = 'none';
 	recordList.style.display = 'none';
 	timer.style.display = 'block';
-	pausePlay.style.display = 'initial';
+	// pausePlay.style.display = 'initial';
 	stopSave.style.display = 'initial';
 	recordForm.style.display = 'block';
 	addTaskButton.style.display = 'block';
 	let currentTime, millisecDifference, secondsDiffence;
 
-	setInterval(() => {
+	const thisRecord = setInterval(timeRecord, 1000);
+	stopSave.addEventListener('click', () => {
+		clearInterval(thisRecord);
+		stopSave.style.background = 'var(--darkJungle)';
+		stopSave.style.boxShadow = 'inset 0 0 10px rgba(0,0,0,.5)';
+		timer.style.color = 'var(--darkJungle)';
+		timer.style.textShadow = 'none';
+	});
+
+	function timeRecord() {
 		currentTime = new Date();
 		millisecDifference = currentTime.getTime() - timestamp.getTime();
 		secondsDiffence = Math.floor(millisecDifference / 1000);
@@ -77,5 +79,5 @@ startButton.addEventListener('click', () => {
 		minutesText = minutes < 10 ? `0${minutes}` : `${minutes}`;
 		hoursText = hours < 10 ? `0${hours}` : `${hours}`;
 		timer.innerHTML = `${hoursText}:${minutesText}:${secondsText}`;
-	}, 1000);
+	}
 });
